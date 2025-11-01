@@ -21,8 +21,10 @@ usar_linter = input("¿Quieres análisis de código estático? (S/n): ") or "s"
 steps_linter = ''
 linter_pkg = ''
 if usar_linter.lower() == 's':
-    linter = input("¿Qué herramienta usarás para código estático? ('flake8', 'pylint', etc. por defecto: 'flake8'): ") or "flake8"
-    linter_pkg = linter.split()[0]
+linter = input(
+    "¿Qué herramienta usarás para código estático? "
+    "('flake8', 'pylint', etc. por defecto: 'flake8'): "
+) or "flake8"    linter_pkg = linter.split()[0]
     cmd_linter = input(f"Comando para análisis estático (por defecto: '{linter} .'): ") or f"{linter} ."
     steps_linter = f"""
     - name: Instalar herramienta de análisis estático
